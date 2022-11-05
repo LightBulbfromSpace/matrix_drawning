@@ -13,6 +13,8 @@ User's controll tool is a dot which can be moved around and change visibility, c
   * "Drawning" - pointer leaves a trace. Unavailable when pointer is invisible.
 * RESET - erases all drawn pointers.
 
+## Technical aspects:
+
 Based on CMSIS, uses cmake+make bulding system.
 
 ## Requirements:
