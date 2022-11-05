@@ -16,6 +16,7 @@ typedef struct
     uint8_t height;
 } matrix;
 
+// (y, x)
 typedef struct
 {
     uint8_t y;
@@ -35,7 +36,12 @@ void left_button(bool* previos_left_state, pin button_pin, matrix m, point* p);
 void right_button(bool* previos_right_state, pin button_pin, matrix m, point* p);
 void down_button(bool* previos_down_state, pin button_pin, matrix m, point* p);
 void mid_button(bool* previos_mid_state, point* p, pin button_pin);
+bool set_button(bool* previos_set_state, bool set_flag, pin button_pin);
+void rst_button(bool* previos_rst_state, pin button_pin, bool points[], matrix m);
 
-void update_points(point curr_point, point points[], matrix m);
-void display_picture(point points[], matrix m, pin rows[], pin cols[]);
-void test_ord();
+void update_points(point curr_point, bool points[], matrix m, bool set_flag);
+void display_picture(bool points[], point p, matrix m, pin rows[], pin cols[]);
+point get_coord_from_array_index(int i, matrix m);
+int get_array_index_from_coord(point p, matrix m);
+
+void clear(bool points[], matrix m);
