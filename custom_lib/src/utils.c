@@ -1,6 +1,6 @@
 #include <utils.h>
 #include <stm32f10x.h>
-#include <stdbool.h>
+#include <stdio.h>
 
 void delay(uint32_t ticks) {
     //for (int i=0; i<ticks; i++) {
@@ -34,53 +34,96 @@ void delay_us(uint32_t us) {
     );
 }
 
-void turn_on_point(uint32_t i, uint32_t j, pin rows[], pin cols[])
+void turn_on_point(pin* row, pin* col)
 {
-	if (i > 7 || j > 7) {
-		return;
-	}
-	for (uint32_t k = 0; k < 8; k++)
-	{
-		if (k == j) {
-			rows[k]._gpio_x->ODR |= rows[k].pin_num;
-		} else {
-			rows[k]._gpio_x->ODR &= ~rows[k].pin_num;
-		}
-	}
-	for (uint32_t k = 0; k < 8; k++)
-	{
-		if (k == i) {
-			cols[k]._gpio_x->ODR &= ~cols[k].pin_num;
-		} else {
-			cols[k]._gpio_x->ODR |= cols[k].pin_num;
-		}
-	}
+	row->_gpio_x->ODR |= row->pin_num;
+	col->_gpio_x->ODR &= ~col->pin_num;
 }
 
-void up_button(bool previos_up_state, pin button_pin, matrix m, uint32_t i)
+void turn_off_point(pin* row, pin* col)
+{
+    row->_gpio_x->ODR &= ~row->pin_num;
+    col->_gpio_x->ODR |= col->pin_num;
+}
+
+void up_button(bool* previos_up_state, pin button_pin, matrix m, point* p)
 {
     bool up_state = !(button_pin._gpio_x->IDR & button_pin.pin_num);
-    if (up_state && !previos_up_state) {
-        if (i == 0) {
-            i = m.height - 1;
+    if (up_state && !(*previos_up_state)) {
+        if (p->x == 0) {
+            p->x = m.height - 1;
         } else {
-            i = --i % m.height;
+            p->x = --p->x % m.height;
         }
     }
     delay_us(1000);
-    previos_up_state = up_state;
+    *previos_up_state = up_state;
 }
 
-void left_button(bool previos_left_state, pin button_pin, matrix m, uint32_t i)
+void left_button(bool* previos_left_state, pin button_pin, matrix m, point* p)
 {
     bool left_state = !(button_pin._gpio_x->IDR & button_pin.pin_num);
-    if (left_state && !previos_left_state) {
-        if (i == 0) {
-            i = m.width - 1;
+    if (left_state && !(*previos_left_state)) {
+        if (p->y == 0) {
+            p->y = m.width - 1;
         } else {
-            i = --i % m.width;
+            p->y = --p->y % m.width;
         }
     }
     delay_us(1000);
-    previos_left_state = left_state;
+    *previos_left_state = left_state;
+}
+
+void right_button(bool* previos_right_state, pin button_pin, matrix m, point* p)
+{
+    bool right_state = !(button_pin._gpio_x->IDR & button_pin.pin_num);
+    if (right_state && !(*previos_right_state)) {
+        p->y = ++p->y % m.width;
+    }
+    delay_us(1000);
+    *previos_right_state = right_state;
+}
+
+void down_button(bool* previos_down_state, pin button_pin, matrix m, point* p)
+{
+    bool down_state = !(button_pin._gpio_x->IDR & button_pin.pin_num);
+    if (down_state && !(*previos_down_state)) {
+        p->x = ++p->x % m.height;
+    }
+    delay_us(1000);
+    *previos_down_state = down_state;
+}
+
+void mid_button(bool* previos_mid_state, point* p, pin button_pin)
+{
+    bool mid_state = !(button_pin._gpio_x->IDR & button_pin.pin_num);
+    if (mid_state && !(*previos_mid_state)) {
+        p->is_turned = !p->is_turned;
+    }
+    delay_us(1000);
+    *previos_mid_state = mid_state;
+}
+
+void update_points(point curr_point, point points[], matrix m)
+{
+    uint8_t k = curr_point.y * m.width + curr_point.x;
+    points[k] = curr_point;
+}
+
+void display_picture(point points[], matrix m, pin rows[], pin cols[])
+{
+    for (uint8_t i = 0; i < m.height * m.width; i++)
+    {
+        if (points[i].is_turned)
+            turn_on_point(&rows[points[i].x], &cols[points[i].y]);
+        else
+            turn_off_point(&rows[points[i].x], &cols[points[i].y]);
+        delay(10000);
+    }
+}
+
+void test_ord()
+{
+    GPIOB->ODR |= GPIO_ODR_ODR5;
+    GPIOB->ODR &= ~GPIO_ODR_ODR15;
 }
