@@ -1,4 +1,17 @@
-# Template for starting development for stm32f1x.
+# Matrix Drawning App
+
+This is an app which allows to create a picture on LED matrix. Code is written for 8x8 matrix but after changes in function main() in "matrix" variable (width and height) and "points" array (should be set number of all points) can be used for other sizes.
+
+User's controll tool is a dot which can be moved around and change visibility, called "pointer" below the text. 
+
+## Buttons usage and modes:
+
+* UP, DOWN, LEFT, RIGTH - move pointer.
+* MIDDLE - change visibility (turn on/off "pointer")
+* SET - switch between two modes:
+  * "Free moving" - pointer doesn't leave a trace.
+  * "Drawning" - pointer leaves a trace. Unavailable when pointer is invisible.
+* RESET - erases all drawn pointers.
 
 Based on CMSIS, uses cmake+make bulding system.
 
