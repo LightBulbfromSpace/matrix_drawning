@@ -7,11 +7,11 @@ User's controll tool is a dot which can be moved around and change visibility, c
 ## Buttons usage and modes:
 
 * UP, DOWN, LEFT, RIGTH - move pointer.
-* MIDDLE - change visibility (turn on/off "pointer")
+* MIDDLE - change visibility (turn on/off pointer)
 * SET - switch between two modes:
   * "Free moving" - pointer doesn't leave a trace.
   * "Drawning" - pointer leaves a trace. Unavailable when pointer is invisible.
-* RESET - erases all drawn pointers.
+* RESET - erases all drawn pointd.
 
 ## Technical aspects:
 
