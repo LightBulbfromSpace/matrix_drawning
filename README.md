@@ -13,6 +13,39 @@ User's controll tool is a dot which can be moved around and change visibility, c
   * "Drawning" - pointer leaves a trace. Unavailable when pointer is invisible.
 * RESET - erases all drawn points.
 
+## Matrix pinout
+
+   R6  C4  C6  R2  
+   _|_|_|_|_|_|_|_|_
+  |   R3  R1  C7  R4|
+  |                 |
+  |                 |
+  |                 |
+  |                 |
+  |___C5__R5__R7__C1|
+    | | | | | | | |
+    R8  C3  C8  C2 
+
+## Pins' mapping
+
+* Matrix
+
+  * Rows:     R1 - B7,   R2 - B6,  R3 - B8,  R4 - B4,
+              R5 - A5,   R6 - B9,  R7 - A6,  R8 - A4
+              
+  * Columns:  C1 - B11,  C2 - B10, C3 - B0,  C4 - B14,
+              C5 - A7,   C6 - B13, C7 - B15, C8 - B1
+  
+* Buttons
+  * COM - GND
+  * UP  - A3
+  * DWN - A2
+  * LFT - A1
+  * RHT - A0
+  * MID - C15
+  * SET - C14
+  * RST - C13
+
 ## Technical aspects:
 
 Based on CMSIS, uses cmake+make bulding system.
