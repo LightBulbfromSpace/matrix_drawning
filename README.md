@@ -15,16 +15,16 @@ User's controll tool is a dot which can be moved around and change visibility, c
 
 ## Matrix pinout
 
-   R6&nbsp;&nbsp;C4&nbsp;&nbsp;C6&nbsp;&nbsp;R2  
-  &nbsp;\_|\_|\_|\_|\_|\_|\_|\_|\_
-  |&nbsp;&nbsp;&nbsp;R3&nbsp;&nbsp;R1&nbsp;&nbsp;C7&nbsp;&nbsp;R4|
-  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-  |\_\_\_C5\_\_R5\_\_R7\_\_C1|
-  &nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|
-  &nbsp;&nbsp;R8&nbsp;&nbsp;C3&nbsp;&nbsp;C8&nbsp;&nbsp;C2 
+   &nbsp;&nbsp;R6&nbsp;&nbsp;&nbsp;&nbsp;C4&nbsp;&nbsp;&nbsp;&nbsp;C6&nbsp;&nbsp;&nbsp;R2  
+  &nbsp;\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_\
+  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R3&nbsp;&nbsp;&nbsp;&nbsp;R1&nbsp;&nbsp;&nbsp;C7&nbsp;&nbsp;&nbsp;R4&nbsp;&nbsp;|\
+  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|\
+  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|\
+  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|\
+  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|\
+  |\_\_\_C5\_\_\_R5\_\_\_R7\_\_C1\_|\
+  &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|\
+  &nbsp;R8&nbsp;&nbsp;&nbsp;&nbsp;C3&nbsp;&nbsp;&nbsp;&nbsp;C8&nbsp;&nbsp;&nbsp;&nbsp;C2 
 
 ## Pins' mapping
 
