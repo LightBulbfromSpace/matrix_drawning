@@ -1,6 +1,6 @@
 # Matrix Drawning App
 
-This is an app which allows to create a picture on LED matrix. Code is written for 8x8 matrix but after changes in function main() in "matrix" variable (width and height) and "points" array (should be set number of all points) can be used for other sizes.
+This is an app which allows to create a picture on LED matrix. Code is written for 8x8 matrix but can be used for other sizes after changes in function main() in "matrix" variable (width and height) and "points" array (should be set number of all points).
 
 User's controll tool is a dot which can be moved around and change visibility, called "pointer" below the text. 
 
